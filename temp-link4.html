@@ -1,0 +1,60 @@
+<html>
+<meta charset="UTF-8">
+<head>
+    <title>Deelzat</title>
+    <meta property="fb:app_id" content="fb400215267615313" />
+    <meta property="al:android:package" content="com.deelzat" />
+    <meta name="al:android:url" property="al:android:url" content="" />
+    <meta name="al:ios:url" property="al:ios:url" content="" />
+    <meta property="al:ios:app_store_id" content="1521234136" />
+    <meta property="al:android:app_name" content="Deelzat" />
+    <meta property="al:ios:app_name" content="Deelzat" />
+    <meta property="al:web:should_fallback" content="true" />
+    <meta property="al:web:url" content="https://deelzat.com" />
+    <meta name="og:title" property="og:title" content="Deelzat" />
+    <meta name="og:description" property="og:description" content="Deelzat" />
+    <meta name="og:image" property="og:image" content="http://deelzat.com/logo.png" />
+    <meta property="og:image:width" content="640" />
+    <meta property="og:image:height" content="640" />
+    <meta name="twitter:title" content="Deelzat" />
+    <meta name="twitter:site" content="@deelzat" />
+    <meta name="twitter:creator" content="@deelzat" />
+    <script>
+        const queryString = window.location.search;
+        console.log(queryString);
+        const urlParams = new URLSearchParams(queryString);
+        const id = urlParams.get('id');
+        const title = urlParams.get('t');
+        const img = urlParams.get('i');
+        const url = 'https://deelzat.page.link/' + id;
+        document
+            .getElementsByTagName('meta')
+            .namedItem('al:android:url')
+            .setAttribute('content', url);
+        document
+            .getElementsByTagName('meta')
+            .namedItem('al:ios:url')
+            .setAttribute('content', url);
+        document
+            .getElementsByTagName('meta')
+            .namedItem('og:title')
+            .setAttribute('content', title || 'Deelzat');
+        document
+            .getElementsByTagName('meta')
+            .namedItem('og:description')
+            .setAttribute('content', title || 'Deelzat');
+        document
+            .getElementsByTagName('meta')
+            .namedItem('og:image')
+            .setAttribute('content', img || 'http://deelzat.com/logo.png');
+        document
+            .getElementsByTagName('meta')
+            .namedItem('twitter:title')
+            .setAttribute('content', title || 'Deelzat');
+
+        setTimeout(function(){  window.location = 'https://deelzat.page.link/' + id }, 1000);
+    </script>
+<body>
+</body>
+</head>
+</html>
